@@ -2,7 +2,7 @@
 Easily Speed up your DashCam videos taken by any Sport/DSLR/Mobile Camera
 
 ## Inputs:
-[**fileType=**mp4] [**speed=**4]
+[***fileType=*** mp4]  [ ***speed=*** 4 ]
 
 
 ## To Start:
