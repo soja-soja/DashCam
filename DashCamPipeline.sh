@@ -22,13 +22,14 @@ FileType=${1:-"mp4"}
 now=$(date +"%m_%d_%Y__%H%M")
 
 # ---------------------------------------------------------------------------------------
-echo -e "Removing Audio..."
+echo -e "\nRemoving Audio..."
 cd 1.Do
 for f in *.$FileType; do
+	echo -n '*'
 	ffmpeg -i $PWD/$f -vcodec copy -an ../2.NoAudio/$f 2>> ../logs/$now.log
 done
 ELAPSED_TIME=$(($SECONDS - $START_TIME))
-echo -e "\t-Done in $(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec\n\n"
+echo -e "\n\t-Done in $(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec\n\n"
 START_TIME=$SECONDS
 
 
@@ -37,14 +38,14 @@ cd ../2.NoAudio/
 
 for f in *.$FileType; do
 	# for audio and Video 
-	# ffmpeg -i $PWD/$f -r 75 -filter_complex "[0:v]setpts=0.5*PTS[v];[0:a]atempo=2.0[a]" -map "[v]" -map "[a]" ../3.fast/$f
+	# ffmpeg -i $PWD/$f -r $NewFrameRate -filter_complex "[0:v]setpts=$speed*PTS[v];[0:a]atempo=2.0[a]" -map "[v]" -map "[a]" ../3.Fast/$f 2>> ../logs/$now.log
 
 	#only for video:
-	
+	echo -n '*'
 	ffmpeg -i $PWD/$f -r $NewFrameRate -filter:v "setpts=$speed*PTS" ../3.Fast/$f 2>> ../logs/$now.log
 done
 ELAPSED_TIME=$(($SECONDS - $START_TIME))
-echo -e "\t-Done in $(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec\n\n"
+echo -e "\n\t-Done in $(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec\n\n"
 START_TIME=$SECONDS
 
 echo -e "Concatinate all..."
