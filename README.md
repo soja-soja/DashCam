@@ -2,7 +2,7 @@
 Easily Speed up your DashCam videos taken by any Sport/DSLR/Mobile Camera
 
 ## Inputs:
-[***fileType=*** mp4]  [ ***speed=*** 4 ]
+[***fileType=*** mp4]  [ ***speed=*** 4 ] [ ***frameRate=*** 30 ]
 
 
 ## To Start:
@@ -25,8 +25,11 @@ to remove the audio and speed up (5X) and concatinate all videos with mp4 format
 -	`./DashCamPipeline.sh avi 5`  
 to remove the audio and speed up (5X) and concatinate all videos with avi format
 
+-	`./DashCamPipeline.sh avi 5 60`  
+to remove the audio and speed up (5X) and originial FrameRate is 60 fps and concatinate all videos with avi format
+
 -	`./DashCamPipeline.sh` 
-to remove the audio and speed up (4X) and concatinate all videos with mp4 format - Default
+to remove the audio and speed up (4X) and assume videos are 30fps and concatinate all videos with mp4 format - Default
 
 
 Enjoy your output file in 4.Final...
