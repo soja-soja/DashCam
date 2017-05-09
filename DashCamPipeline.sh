@@ -12,11 +12,16 @@ rm -r 2.NoAudio  3.Fast logs
 mkdir -p 1.Do  2.NoAudio  3.Fast  4.Final logs
 
 
+# --------------------------------- Variables ------------------------------------
+
+OriginalFrameRate=${3:-30}
+NewFrameRate=$(($OriginalFrameRate*${2:-4}))
+
 speed=$(bc <<<"scale=3;1/${2:-4}")
 FileType=${1:-"mp4"}
 now=$(date +"%m_%d_%Y__%H%M")
 
-
+# ---------------------------------------------------------------------------------------
 echo -e "Removing Audio..."
 cd 1.Do
 for f in *.$FileType; do
@@ -36,7 +41,7 @@ for f in *.$FileType; do
 
 	#only for video:
 	
-	ffmpeg -i $PWD/$f -r 75 -filter:v "setpts=$speed*PTS" ../3.Fast/$f 2>> ../logs/$now.log
+	ffmpeg -i $PWD/$f -r $NewFrameRate -filter:v "setpts=$speed*PTS" ../3.Fast/$f 2>> ../logs/$now.log
 done
 ELAPSED_TIME=$(($SECONDS - $START_TIME))
 echo -e "\t-Done in $(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec\n\n"
