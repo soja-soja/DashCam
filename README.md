@@ -1,4 +1,4 @@
-# EasyDashCam by SOJA (Using ffmpeg)
+# ffmpeg based EasyDashCamEditor (EDCE) by SOJA
 Easily Speed up your DashCam videos taken by any Sport/DSLR/Mobile Camera
 
 ## Inputs:
