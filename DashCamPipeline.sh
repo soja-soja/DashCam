@@ -13,9 +13,10 @@ mkdir -p 1.Do  2.NoAudio  3.Fast  4.Final logs
 
 
 # --------------------------------- Variables ------------------------------------
-
+MaxFrameRate=30
 OriginalFrameRate=${3:-30}
-NewFrameRate=$(($OriginalFrameRate*${2:-4}))
+a=$(($OriginalFrameRate*${2:-4}))
+NewFrameRate=$(( a < MaxFrameRate ? a : MaxFrameRate ))
 
 speed=$(bc <<<"scale=3;1/${2:-4}")
 FileType=${1:-"mp4"}
@@ -63,3 +64,5 @@ START_TIME=$SECONDS
 echo -e "*** All Done! in ***"
 ELAPSED_TIME=$(($SECONDS - $ALL_START_TIME))
 echo -e "\t\t-Overall time: $(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec\n"
+
+rm -r 2.NoAudio  3.Fast
