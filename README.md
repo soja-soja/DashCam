@@ -1,5 +1,5 @@
 # EasyDashCamEditor (EDCE) by SOJA
-Easily Speed up your DashCam videos taken by any Sport/DSLR/Mobile Camera
+If you have a sport camera and want to create timelapse, remove sound and audio, and easily Speed up/down your DashCam videos taken by any Sport/DSLR/Mobile Camera, you are on the right rep.
 
 ## Inputs:
 [***fileType=*** mp4]  [ ***speed=*** 4 ] [ ***frameRate=*** 30 ]
