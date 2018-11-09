@@ -14,25 +14,25 @@ If you have a sport camera and want to create timelapse, remove sound and audio,
 -- `chmod +x DashCamPipeline.sh`  
 `mkdir 1.DO` 
 
-2. Put all your Video files in 1.DO folder, pass the file extension as the first parameter and desirabel speed rate as the second input and Run it:
+2. Put all your Video files in ./DO folder, pass the file extension as the first parameter and desirable speed rate as the second input and Run it:
 
 -	`./DashCamPipeline.sh mp4 1` 
-to just simply remove the audio and concatinate all videos with mp4 format
+to just simply remove the audio and concatenate all videos with mp4 format
 
 -	`./DashCamPipeline.sh mp4 5`  
-to remove the audio and speed up (5X) and concatinate all videos with mp4 format
+to remove the audio and speed up (5X) and concatenate all videos with mp4 format
 
 -	`./DashCamPipeline.sh avi 5`  
-to remove the audio and speed up (5X) and concatinate all videos with avi format
+to remove the audio and speed up (5X) and concatenate all videos with avi format
 
 -	`./DashCamPipeline.sh avi 5 60`  
-to remove the audio and speed up (5X) and originial FrameRate is 60 fps and concatinate all videos with avi format
+to remove the audio and speed up (5X) and original FrameRate is 60 fps and concatenate all videos with avi format
 
 -	`./DashCamPipeline.sh` 
-to remove the audio and speed up (4X) and assume videos are 30fps and concatinate all videos with mp4 format - Default
+to remove the audio and speed up (4X) and assume videos are 30fps and concatenate all videos with mp4 format - Default
 
 
-Enjoy your output file in 4.Final...
+Enjoy your output file in ./Final...
 
 
 	
