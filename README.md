@@ -2,7 +2,7 @@
 If you have a sport camera and want to create timelapse, remove sound and audio, and easily Speed up/down your DashCam videos taken by any Sport/DSLR/Mobile Camera, you are on the right rep.
 
 ## Inputs:
-[***fileType=*** mp4]  [ ***speed=*** 4 ] [ ***frameRate=*** 30 ]
+[***fileType=*** mp4]  [ ***speed=*** 4 ] [ ***frameRate=*** 30 ] [ ***Threads=*** 0 ]
 
 
 ## To Start:
@@ -31,6 +31,8 @@ to remove the audio and speed up (5X) and original FrameRate is 60 fps and conca
 -	`./DashCamPipeline.sh` 
 to remove the audio and speed up (4X) and assume videos are 30fps and concatenate all videos with mp4 format - Default
 
+-	`./DashCamPipeline.sh avi 5 60 0` 
+To set multi-threading to optimal setting use 0 or set the number of threads to desired value to utilize the CPU cores proportionally.
 
 Enjoy your output file in ./Final...
 
